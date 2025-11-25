@@ -1,32 +1,89 @@
 # npm Shai-Hulud Audit Tools
 
-This repository contains PowerShell scripts and documentation to help detect
-potential impact from the Shai-Hulud / Sha1-Hulud npm supply-chain campaign.
+This repository contains PowerShell scripts and documentation to help detect whether Windows endpoints may be affected by the **Shai-Hulud / Sha1-Hulud** npm supply-chain campaign.
 
 The goal is to answer two questions:
 
-1. Does this endpoint have **Node.js / npm** installed?
-2. If yes, did any **Node.js project** on this endpoint install a **known malicious package**?
+1. Does this machine have **Node.js / npm installed**?  
+2. If yes, do any Node.js projects contain **known malicious npm packages**?
 
-## Contents
+---
 
-- `scripts/Detect-NodeNpm.ps1`  
-  Local detection script that checks whether Node.js and npm are present.
+## 📁 Repository Structure
 
-- `scripts/Scan-NpmPackagesFromCsv.ps1`  
-  Scans all Node projects under a given root path (e.g. `C:\Projects`) and
-  compares `package.json` / `package-lock.json` against a CSV of known
-  malicious packages (e.g. from Wiz, GitHub, or other threat intel).
+```
+scripts/
+├─ Detect-NodeNpm.ps1
+└─ Scan-NpmPackagesFromCsv.ps1
 
-- `docs/incident-summary.md`  
-  High-level explanation of the campaign and how these scripts fit into a
-  response workflow.
+docs/
+└─ incident-summary.md
+```
 
-## Usage Overview
+---
 
-### 1. Detect Node.js / npm locally
+## 🔍 1. Detect Node.js / npm
 
-From an elevated or normal PowerShell session (as appropriate):
+Use this script to determine whether the machine is even in-scope for npm-based supply-chain attacks.
+
+Run:
 
 ```powershell
 .\scripts\Detect-NodeNpm.ps1
+```
+
+This script reports:
+
+- Whether Node.js is installed  
+- Whether npm is installed  
+- Where they are located (PATH and common install directories)
+
+If the machine does **not** have Node.js or npm installed, it cannot be impacted by npm packages and is considered **out-of-scope** for this campaign.
+
+---
+
+## 🛡 2. Scan Projects for Known Malicious Packages (CSV-Based)
+
+Before scanning, save your threat-intel CSV locally, for example:
+
+```
+C:\Security\shai-hulud-packages.csv
+```
+
+Then run:
+
+```powershell
+.\scripts\Scan-NpmPackagesFromCsv.ps1 `
+    -CsvPath 'C:\Security\shai-hulud-packages.csv' `
+    -RootPath 'C:\Projects'
+```
+
+This script will:
+
+- Recursively locate all `package.json` files under the root path  
+- Scan each project’s `package.json` and `package-lock.json`  
+- Search for any package names that appear in the malicious package CSV  
+- Clearly mark each project as **Clean** or **SUSPICIOUS**
+
+The script is **read-only**. It does not modify any files or upload data.
+
+---
+
+## 📘 Additional Documentation
+
+A high-level summary of the Shai-Hulud campaign and how these tools support triage:
+
+- [`docs/incident-summary.md`](docs/incident-summary.md)
+
+---
+
+## ⚠️ Disclaimer
+
+These scripts:
+
+- Do **not** alter project files  
+- Do **not** transmit data  
+- Are intended for **triage and discovery only**  
+- Should be used alongside SIEM searches, EDR results, and standard IR processes
+
+Use these tools responsibly and verify CSV contents from trusted threat intelligence sources.
