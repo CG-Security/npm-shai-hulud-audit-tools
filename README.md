@@ -69,6 +69,22 @@ The script is **read-only**. It does not modify any files or upload data.
 
 ---
 
+### 📄 Where do I get the CSV?
+
+This script does **not** download threat intelligence automatically.  
+You must provide a CSV file that contains known malicious npm package names.
+
+Valid sources include:
+
+- Threat-intel exports from vendors (e.g., Wiz, GitHub security advisories)
+- Internal SOC/IR–generated malicious package lists
+- Community-maintained intel feeds
+
+The only requirement is that the CSV includes a **`Package`** column listing npm package names.  
+The script is vendor-agnostic and will use whatever list you provide.
+
+---
+
 ## 📘 Additional Documentation
 
 A high-level summary of the Shai-Hulud campaign and how these tools support triage:
