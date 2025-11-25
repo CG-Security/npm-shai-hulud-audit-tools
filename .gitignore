@@ -1,0 +1,22 @@
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore editor/IDE settings
+.vscode/
+.idea/
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Ignore PowerShell history (optional)
+ConsoleHost_history.txt
+
+# Ignore build artifacts (none used here, but included for safety)
+bin/
+obj/
+
+# Node-related
+node_modules/
+npm-debug.log
