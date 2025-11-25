@@ -9,7 +9,7 @@ The goal is to answer two questions:
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 scripts/
@@ -22,7 +22,7 @@ docs/
 
 ---
 
-## 🔍 1. Detect Node.js / npm
+## 1. Detect Node.js / npm
 
 Use this script to determine whether the machine is even in-scope for npm-based supply-chain attacks.
 
@@ -85,7 +85,7 @@ The script is vendor-agnostic and will use whatever list you provide.
 
 ---
 
-## 📘 Additional Documentation
+## Additional Documentation
 
 A high-level summary of the Shai-Hulud campaign and how these tools support triage:
 
@@ -93,7 +93,7 @@ A high-level summary of the Shai-Hulud campaign and how these tools support tria
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 These scripts:
 
