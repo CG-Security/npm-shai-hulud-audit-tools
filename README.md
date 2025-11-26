@@ -42,7 +42,7 @@ If the machine does **not** have Node.js or npm installed, it cannot be impacted
 
 ---
 
-## 🛡 2. Scan Projects for Known Malicious Packages (CSV-Based)
+## 2. Scan Projects for Known Malicious Packages (CSV-Based)
 
 Before scanning, save your threat-intel CSV locally, for example:
 
@@ -69,7 +69,7 @@ The script is **read-only**. It does not modify any files or upload data.
 
 ---
 
-### 📄 Where do I get the CSV?
+### Where do I get the CSV?
 
 This script does **not** download threat intelligence automatically.  
 You must provide a CSV file that contains known malicious npm package names.
