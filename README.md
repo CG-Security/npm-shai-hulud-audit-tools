@@ -52,14 +52,14 @@ If the machine does not have Node.js or npm installed, it cannot be impacted by 
 Before scanning, save your threat-intel CSV locally, for example:
 
 ```
-C:\Security\shai-hulud-packages.csv
+C:\Security\shai-hulud-2-packages.csv
 ```
 
 Then run:
 
 ```powershell
 .\scripts\Scan-NpmPackagesFromCsv.ps1 `
-    -CsvPath 'C:\Security\shai-hulud-packages.csv' `
+    -CsvPath 'C:\Security\shai-hulud-2-packages.csv' `
     -RootPath 'C:\Projects'
 ```
 
@@ -109,7 +109,7 @@ Run the project scanner with your CSV and root project directory:
 
 ```powershell
 .\scripts\Scan-NpmPackagesFromCsv.ps1 `
-  -CsvPath 'C:\Security\shai-hulud-packages.csv' `
+  -CsvPath 'C:\Security\shai-hulud-2-packages.csv' `
   -RootPath 'C:\Projects'
 ```
 
