@@ -95,7 +95,7 @@ The script is vendor-agnostic and will use whatever list you provide.
 Clone the repository:
 
 ```powershell
-git clone https://github.com/yourusername/npm-shai-hulud-audit-tools.git
+git clone https://github.com/CG-Security/npm-shai-hulud-audit-tools.git
 cd npm-shai-hulud-audit-tools
 ```
 
