@@ -1,3 +1,8 @@
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)
+![Security Tool](https://img.shields.io/badge/Security-Audit%20Tool-red.svg)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 # npm Shai-Hulud Audit Tools
 
 This repository contains PowerShell scripts and documentation to help detect whether Windows endpoints may be affected by the **Shai-Hulud / Sha1-Hulud** npm supply-chain campaign.
