@@ -4,7 +4,7 @@ This document provides a high-level overview of the Shai-Hulud / Sha1-Hulud npm 
 
 ---
 
-## 📌 What Is This Campaign?
+## What Is This Campaign?
 
 The Shai-Hulud attack is a large-scale **npm supply-chain compromise** where malicious actors published or modified npm packages to include harmful code. These packages could exfiltrate credentials, attack developer environments, or spread by abusing stolen authentication tokens.
 
@@ -12,7 +12,7 @@ In other words: attackers managed to slip malicious packages into the npm ecosys
 
 ---
 
-## 🔍 Objectives of This Repository
+## Objectives of This Repository
 
 These tools help answer:
 
@@ -26,7 +26,7 @@ The scripts help with **detection, discovery, and scoping**—they do *not* repl
 
 ---
 
-## 🧭 Typical Workflow
+## Typical Workflow
 
 ### 1. **Discovery (Scope Identification)**  
 Run:
@@ -65,7 +65,7 @@ C:\Security\shai-hulud-packages.csv
 
 ---
 
-## 🛑 Important Notes
+## Important Notes
 
 - These scripts **only scan for package names** known to be malicious (from your CSV).  
 - They do **not** detect modified or zero-day malicious packages.  
@@ -74,7 +74,7 @@ C:\Security\shai-hulud-packages.csv
 
 ---
 
-## 🧩 Why This Matters
+## Why This Matters
 
 Supply-chain attacks rely on compromised dependencies—meaning a malicious package can bypass traditional defenses by appearing trusted.
 
